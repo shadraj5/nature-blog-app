@@ -40,7 +40,7 @@ export default function AuthContextProvider({ children }) {
   const login = async (response) => {
     try {
       const { token, userDetails } = response.data;
-      console.log(token);
+
       setSession(token);
       setIsAuthenticated(true);
       setUser(userDetails);

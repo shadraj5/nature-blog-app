@@ -17,7 +17,6 @@ import { Icon } from '@iconify/react';
 export default function BlogList({ propData }) {
   const [search, setSearch] = React.useState('');
   const { push } = useRouter();
-  console.log(propData);
   return (
     <Container sx={{ p: 5 }} maxWidth="lg">
       <Grid container spacing={3} mb={3}>

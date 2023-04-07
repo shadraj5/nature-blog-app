@@ -4,7 +4,6 @@ import React from 'react';
 import { getToken } from '@/utils/cookieToken';
 import axios from '@/utils/axios';
 import MainLayout from '@/layouts/mainLayouts';
-import { BASE_URI } from '@/utils/apiConfig';
 
 export const getServerSideProps = async ({ req, query }) => {
   const token = getToken(req);

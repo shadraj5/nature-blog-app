@@ -31,7 +31,6 @@ export default function CommentForm() {
   } = method;
 
   const onsubmit = async (data) => {
-    console.log(data);
     try {
       const result = await axios.post(`/blog/addcomment`, data);
       if (result.status === 200) {

@@ -5,12 +5,94 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 First, run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+
 ```
+
+user details to login-
+//admin
+email - admin@email.com
+password - 12345678
+
+//author
+email - author@email.com
+password - 12345678
+
+//Reader
+email - reader@email.com
+password - 12345678
+.......
+
+This is Nature blog app created in NextJS.
+
+Folder Structure -
+
+components
+context
+guard
+hooks
+layouts
+pages
+sections
+serverConfig
+styles
+utils
+
+-Create authentication module for blog post
+-Created api using Next/api to authenticate
+-Created context to use authentication.
+-If authentication is successfull render to dashboard/home page.
+
+-Created api to authentication using JWT token
+-pages/api/auth/login
+-Created api to register
+-auth/register
+
+-Created api to get all posts.
+-pages/api/blog/getallpost
+
+-Created api to create new posts, edit existed posts and delete posts.
+-pages/api/blog/postblog
+
+-Created api to add new Comment.
+-pages/api/blog/addcomment
+
+-Created api to get full content of individual post
+-pages/api/blog/postdetail/[id].js
+
+-Created layouts for NavBar footer
+-Created Header
+-layouts/mainLayouts/Header
+-Created Footer
+-layouts/mainLayouts/Footer
+
+-Created Home page
+Home - accessed by all users
+Create post - accessed by admin and author
+create user - accessed by only admin (admin can create user by defining their role).
+
+-section/auth/login
+-Created LoginForm to login and exported to pages/auth/login to render
+
+-section/auth/register
+-Created Register to register new user and exported to pages/auth/login to render
+
+section/dashboard/home
+-Created Hero Section-
+-Created BlogList Component with pagination and can be searched by title.
+-Created index component to export hero and BlogList to pages/dashboard/home for rendering
+
+-section/dashboard/blogdetails
+-Created BlogDetails section to show full content of individual post
+-Created CommentForm component to get comment for individual post
+-exported to pages/dashboard/blogdetails to render.
+
+-section/dashboard/postblog
+-Created CreatePost component to create a new post and edit existed post. Accessed by admin and author.
+-exported to pages/dashboard/postblog to render.
+
+.......
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

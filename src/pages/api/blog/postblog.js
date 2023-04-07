@@ -64,43 +64,7 @@ async function handler(req, res) {
         res.status(500).json({ success: false, message: error.message });
       }
       break;
-    case 'GET':
-      try {
-        const options = {
-          page: parseInt(req?.query?.page, 10),
-          limit: parseInt(req?.query?.limit, 10)
-        };
 
-        let query = [
-          {
-            $match: {
-              email: req.user.email
-            }
-          }
-        ];
-
-        const aggregate = Posts.aggregate(query);
-
-        const postResult = await Posts.aggregatePaginate(aggregate, options);
-
-        if (Posts.length === 0) {
-          return res.status(200).json({
-            success: true,
-            message: 'No tickets found!'
-          });
-        }
-
-        return res.status(200).json({
-          success: true,
-          message: 'Tickets fetched successfully.',
-          postResult
-        });
-      } catch (error) {
-        return res.status(500).json({
-          success: false,
-          message: error
-        });
-      }
     case 'DELETE':
       // delete a post
       const stringId = req.query?.id;

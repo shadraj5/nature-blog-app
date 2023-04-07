@@ -124,7 +124,10 @@ export default function BlogDetails({ data }) {
           </Grid>
 
           {data.postData?.comment?.length > 0 ? (
-            <CommentList commentData={data?.postData?.comment} pageSize={4} />
+            <CommentList
+              commentData={data?.postData?.comment.reverse()}
+              pageSize={4}
+            />
           ) : (
             <Grid item xs={12} md={12}>
               <Typography variant="caption" textAlign="center" color="primary">
